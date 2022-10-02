@@ -1,0 +1,12 @@
+.searchContent{
+    box-shadow: -2px -1px 11px rgba(128, 128, 128, 0.39), 3px 2px 7px rgba(128, 128, 128, 0.37);
+    border-radius: 20px;
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem auto 0 auto;
+}
+
+.userSearch{
+    margin-left: 1rem;
+    width: 80%;
+}

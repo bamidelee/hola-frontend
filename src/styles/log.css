@@ -1,0 +1,76 @@
+.log{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    
+}
+
+.logLeft{
+    display: grid;
+    grid-template-rows: 50% 50%;
+    justify-content: center;
+    background-color: black;
+}
+
+.logoIcon{
+  height: 10rem;
+  width: 10rem;
+  object-fit: scale-down;
+  align-self: end;
+}
+
+.logoName{
+    align-self: start;
+    width: 10rem;
+  
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    padding: 0;
+    margin: 0;
+}
+
+.logRight{
+    text-align: center;
+}
+
+.logH1{
+    font-size: 4rem;
+}
+
+.logH2{
+    font-size: 2rem;
+}
+
+.logSignIn{
+    color:black;
+    background-color: white ;
+    margin: 1rem;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.384);
+    border-radius: 20px;
+    padding: .5rem;
+    width: 10rem;
+}
+
+.logSignup{
+    color:white;
+    background-color: black ;
+    margin: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: .5rem;
+    width: 10rem;
+}
+
+.logFooter{
+    margin-top: 5rem;
+}

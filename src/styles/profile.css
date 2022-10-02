@@ -1,0 +1,123 @@
+.profileHeader{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profileBackImage{
+    height: 12rem;
+    width: 100%;
+}
+
+.profileIconContainer{
+    border-radius: 100px;
+    padding: 10px;
+    height: 7rem;
+    width: 7rem;
+    position: absolute;
+    top: 12rem;
+    z-index: 2;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    left: 2rem;
+}
+
+.profileDisplay{
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.profileIcon{
+    height: 7rem;
+    width: 7rem;
+    object-fit: scale-down;
+    border-radius: 100px;
+
+}
+
+.profileMain button{
+    position: relative;
+    top: 2rem;
+    left: 70%;
+  
+}
+
+.profileMain button:hover{
+    background-color: rgba(128, 128, 128, 0.212) !important;
+}
+
+.editProfile{
+    font-size: 1rem;
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid rgba(128, 128, 128, 0.432);
+    border-radius: 20px;
+}
+
+.followButton{
+    font-size: 1rem;
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid rgba(128, 128, 128, 0.432);
+    border-radius: 20px;
+}
+.profileName{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.profileVerified{
+    font-size: 1.5rem;
+    color:  #26a6c7;
+}
+.profileInfo{
+    margin-left: 1rem;
+    margin-top: 90px;
+}
+
+.profileInfo p {
+    margin: 0;
+    color: rgb(85, 83, 83);
+    
+}
+
+.profileWallpaper{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profileBio{
+    margin-top: 1rem;
+}
+
+.profileFollow{
+    display: flex;
+    gap: 1rem;
+}
+
+.profileFollow span{
+    color: rgb(65, 63, 63);
+}
+
+.holas h2{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.37);
+    text-align: center;
+}
+
+.profileFollow div{
+    cursor: pointer;
+}
+
+.material-symbols-outlined{
+    cursor: pointer;
+}
+
+.profileMessage{
+    position: relative;
+    top: 2.5rem;
+    left: 65%;
+}

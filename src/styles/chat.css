@@ -1,0 +1,187 @@
+.chatHead{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+
+}
+
+.chat{
+    position:relative;
+
+}
+
+.chat form{
+   bottom: 5px;
+   display: flex;
+   gap: .5rem;
+   width: 100%;
+   align-items: center;
+
+
+}
+
+.chat .textarea{
+    border: none;
+    box-sizing: border-box;
+    border: .5px solid gray;
+    outline: none;
+    transition: all .3s;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    white-space: wrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    resize: none;
+    max-height: 4rem;
+    overflow-y: scroll;
+    margin: 0;
+
+}
+
+.chat .textarea:focus{
+    border: 2px solid #26a6c7;
+}
+.textarea::-webkit-scrollbar {
+    display: none;
+  }
+.chat form button{
+    border: none;
+    color:  #26a6c7 !important;
+    background: none;
+}
+
+.conversation{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    word-wrap: break-word;
+}
+.conversation::-webkit-scrollbar {
+    display: none;
+  }
+
+.to{
+   align-self: flex-end;
+    max-width: 50%;
+    margin: .5rem 1rem .5rem 0;
+}
+
+.to .chatText{
+    background-color: #26a6c7;
+    padding: 8px;
+    border-radius: 20px 20px 0 20px;
+    color: white;
+}
+
+.to .chatDate{
+    font-size: .7rem;
+    color: rgba(128, 128, 128, 0.603);
+   text-align: right;
+}
+
+.from{
+    margin: .5rem 0 .5rem 1rem; 
+}
+
+.from .chatText{
+    display: inline-block;
+    max-width: 50%;
+    background-color: #1c4e5a8c;
+    padding: 8px;
+    border-radius: 20px 20px 20px 0;
+    color: white;
+}
+
+.from .chatDate{
+    font-size: .7rem;
+    color: rgba(128, 128, 128, 0.603);
+}
+
+.contactDetails{
+    display: grid;
+ grid-template-columns: 3rem auto;
+ grid-template-rows: auto auto;
+ padding: 10px;
+ cursor: pointer;
+   
+}
+
+.contactDetails:hover{
+    background-color: #26a7c717;
+}
+
+.contactDetails img{
+    grid-row: span 2;
+}
+
+.lastText{
+    color: rgba(128, 128, 128, 0.452);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 300px;
+    text-overflow: ellipsis !important;
+}
+
+.textarea img{
+    height: 5rem;
+    width: 5rem;
+    object-fit: scale-down;
+}
+
+.sendImage{
+    height: 4rem;
+    width: 4rem;
+    object-fit: scale-down;
+    border-radius: 20px;
+
+}
+
+.conversationImage{
+    height: 12rem;
+    width: 12rem;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.conversation video{
+    width: 12rem;
+    height: 12rem;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.sendImageContainer{
+    position: absolute;
+    left: 3px;
+}
+
+.sendImageClose{
+
+  
+   color: white;
+   position: absolute;
+   top: 4px;
+   left: 4px;
+   border-radius: 50px;
+   background-color: rgba(0, 0, 0, 0.466);
+}
+
+.chatContainer{
+    position: relative;
+    width: 100%;
+  
+}
+
+.sendImageContainer video{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 20px;
+
+}

@@ -1,0 +1,120 @@
+.Form{
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 95vmin;
+    border-radius: 20px;
+    z-index: 2;
+    background-color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.formClose{
+    text-align: left;
+    cursor: pointer;
+}
+
+.FormHeader{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+.formLogo{
+    height: 3rem;
+    width: 3rem;
+}
+
+.formError{
+    color: red;
+}
+
+.formDiv{
+    margin: 1rem;
+    text-align: left;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0 0 10px;
+    display: grid;
+    align-items: center;
+    z-index: 5;
+    outline: none;
+    position: relative;
+}
+
+
+.formLabel{
+    display: block;
+    margin-left: 1rem;
+    position: absolute;
+    top: 1.5rem;
+    font-size: 1rem;
+    transition: all .3s;
+    left: 1rem;
+}
+
+.formInput{
+   outline: none;
+   border: 1px solid rgba(128, 128, 128, 0.473);
+   border-radius: 20px;
+   height: 3rem;
+   width: 100%;
+   font-size: 1rem;
+   padding-top: 1rem;
+   padding-left: 1rem;
+}
+
+.formInput:not(:placeholder-shown) + label{
+    font-size: .7rem;
+    color: #26a6c7;
+    top: 1rem;
+}
+
+.formInput:focus + label{
+    font-size: .7rem;
+    color: #26a6c7;
+    top: 1rem;
+}
+
+.formInput:focus{
+    border:2px solid#26a6c7 ;
+}
+
+.formButton{
+    color: white;
+    background-color: black ;
+    margin: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: .5rem;
+    width: 10rem;
+}
+
+.formButton:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black
+}
+
+.signInFooter{
+    display: inline-block;
+}
+
+.signInToSignUp{
+    margin-top: 2rem;
+    border: none;
+    background-color: white;
+    color: #26a6c7;
+}
+
+
+
+
+
+

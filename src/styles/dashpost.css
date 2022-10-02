@@ -1,0 +1,148 @@
+.dashPost{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    width: 100%;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: .5px solid rgba(128, 128, 128, 0.178);
+    border-bottom: none;
+}
+
+.dashPost:hover{
+    background-color: rgba(128, 128, 128, 0.137);
+}
+.dashPost:hover .nameLink{
+    background-color: rgba(128, 128, 128, 0.068) !important;
+}
+.dashPost .icon{
+    margin-top: 1rem;
+}
+
+ .postHead{
+    display: flex;
+    font-size: 1.2rem;
+    gap: .5rem;
+}
+.postButtons button{
+    padding: 0;
+    width: 2rem;
+}
+
+  .postName{
+    font-weight: 800;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.postUsername{
+    color: gray;
+}
+
+.postTime{
+    color: gray;
+}
+
+.dashPost .media{
+    width: 90%;
+    height: 20em;
+    margin-bottom: .5rem;
+}
+
+.media video{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.288);
+}
+
+.media img{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.253);
+}
+
+.verified{
+    color: #26a6c7;
+    font-size: 1rem;
+    align-self: center;
+}
+
+.dashPost .postButtons{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.postButtons button{
+    color: gray;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: flex-end;
+}
+.dashPost .text{
+    margin: .5rem;
+}
+
+.dashPost .comment:hover{
+    color: rgba(16, 16, 236, 0.726);
+}
+
+.dashPost .repost:hover{
+    color: rgba(0, 128, 0, 0.836);
+}
+
+.dashPost .like:hover{
+    color: rgba(255, 0, 0, 0.699);
+}
+
+.reposted{
+    color: rgba(0, 128, 0, 0.836);
+}
+
+.liked{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  color:  rgba(255, 0, 0, 0.699);
+
+}
+
+.postComments{
+    margin-top: 2rem;
+}
+
+.viewPost h3{
+    color: rgba(128, 128, 128, 0.356);
+    border-bottom: 1px solid  rgba(128, 128, 128, 0.356);
+    text-align: center;
+}
+.commentTo{
+    position: relative;
+}
+
+.linkPost{
+    height:90%;
+    width: 2px;
+    background-color: rgba(128, 128, 128, 0.274);
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    z-index: -1;
+}
+
+.mainView{
+    cursor: pointer;
+}
+
+.displayView{
+    cursor: pointer;
+}

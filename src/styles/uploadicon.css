@@ -1,0 +1,170 @@
+.UI{
+    z-index: 5;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    width: 90vmin;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.UIheader{
+    display: grid;
+    grid-template-columns: 20% 50% 20% 10%;
+    align-items: center;
+  height: 3rem;
+}
+
+.UIheader h2{
+    justify-self: left;
+    margin: 0;
+}
+
+.UIheader button{
+    width: 80%;
+}
+
+.backImage{
+    height: 12rem;
+    position: relative;
+   
+}
+
+.wallpaper{
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+}
+
+.UIsymbol{
+    z-index: 7;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5rem;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.301);
+    color: rgba(255, 255, 255, 0.39);
+    border-radius: 50px;
+}
+
+.UIheader button{
+    background-color: black;
+    color: white;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    align-self: top;
+}
+
+.UIIconContainer{
+    height: 5rem;
+    width: 5rem;
+    padding: 4px;
+    border-radius: 50px;
+    position: absolute;
+    top: 13rem;
+    left: 3rem;
+    z-index: 8;
+}
+
+.UIheader span{
+    cursor: pointer;
+}
+.UIicon{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    border-radius: 50px;
+
+}
+
+.UI input[type=file]{
+    display: none;
+}
+
+.UIIconContainer span{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1.5rem;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.301);
+    color: rgba(255, 255, 255, 0.39);
+    border-radius: 50px;
+}
+
+.details label{
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+  transition: all .3s;
+  font-size: 1.2rem;
+}
+
+.details input{
+    height: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    border-radius: 20px;
+    padding-left: 1rem;
+    font-size: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.582);
+    outline: none;
+    display: block;
+    width: 95%;
+    margin-bottom: 6px;
+}
+
+.details input:focus + label{
+    top: .5rem;
+    color: #26a6c7;
+    font-size: .8rem;
+}
+
+.details input:not(:placeholder-shown) + label{
+    top: .5rem;
+    color: #26a6c7;
+    font-size: .8rem;
+}
+
+.details input:not(:placeholder-shown){
+    border: 1px solid #26a6c7;
+}
+.details input:focus{
+    border: 1px solid #26a6c7;
+}
+
+.details{
+    margin-top: 3rem;
+}
+
+.details div{
+    position: relative;
+}
+
+html{
+    padding: 0;
+    margin: 0;
+}

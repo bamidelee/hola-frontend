@@ -1,0 +1,81 @@
+.createPost{
+    z-index: 5;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    width: 90vmin;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border-radius: 20px;
+}
+.createPost .section{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.postLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.createPost textarea{
+    resize: none;
+    width: 80%;
+    margin-top: 2rem;
+    outline: none;
+    border:none;
+    font-size: 1rem;
+}
+
+#gallery{
+    display: none;
+}
+
+.CPFooter{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.CPButton{
+    background-color: #26a6c7;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    height: 2rem;
+    width: 6rem;
+    font-size: 1rem;
+}
+
+.uploadIMG{
+    height: 5rem;
+    width: 5rem;
+    object-fit: scale-down;
+
+}
+
+.uploadMedia{
+    display: flex;
+    height: 8rem;
+    width: 8rem;
+}
+
+.commentLink{
+    background-color: rgba(128, 128, 128, 0.39);
+    width: 2px;
+    margin-left: 1rem;
+    height: 5rem;
+}
+.section .commentLeft{
+    display: grid;
+    grid-template-rows: 2rem 100%;
+}
+
+.loading{
+    height: 1.5rem;
+    width: 1.5rem;
+}
