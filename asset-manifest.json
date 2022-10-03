@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hola-frontend/static/css/main.22952146.css",
-    "main.js": "/hola-frontend/static/js/main.34e58512.js",
+    "main.js": "/hola-frontend/static/js/main.c8235dcb.js",
     "static/media/Loading_2.gif": "/hola-frontend/static/media/Loading_2.63d7da1bc33c0063002c.gif",
     "static/media/logoname.png": "/hola-frontend/static/media/logoname.16baed1f109072fbcbcd.png",
     "index.html": "/hola-frontend/index.html",
     "main.22952146.css.map": "/hola-frontend/static/css/main.22952146.css.map",
-    "main.34e58512.js.map": "/hola-frontend/static/js/main.34e58512.js.map"
+    "main.c8235dcb.js.map": "/hola-frontend/static/js/main.c8235dcb.js.map"
   },
   "entrypoints": [
     "static/css/main.22952146.css",
-    "static/js/main.34e58512.js"
+    "static/js/main.c8235dcb.js"
   ]
 }
