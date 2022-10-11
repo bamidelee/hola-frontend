@@ -1,4 +1,4 @@
-# SCAREFLIiX
+# Hola
 ![hola image](./src/hola.jpg)
 
 ## About
