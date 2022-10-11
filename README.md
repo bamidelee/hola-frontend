@@ -1,5 +1,5 @@
 # SCAREFLIiX
-![hola image](./src/Holaaa.jpg)
+![hola image](./src/hola.jpg)
 
 ## About
 A social media app built with MongoDB, GraphQL express, react, NodeJS and more. this is a fully functional and resposnsive app that allows users to create an account, post messages, photos, videos, comment, like/unlike, follow/unfollow, change their avartar and much more. i used graphql aubacrptions to enable instant messaging and cloudinary for picture and videos upload.
