@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+ HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -15,7 +15,7 @@ import SearchPage from "./components/searchPage.js";
 function App () {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element= {<Layout/>}>
           <Route index element={<DashPost/>}/>
@@ -30,7 +30,7 @@ function App () {
           <Route path='search/profile/:username' element={<ProfileDisplay/>}/>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 
 }

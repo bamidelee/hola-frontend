@@ -21,9 +21,9 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
-const httpLink = new HttpLink({ uri: process.env.REACT_APP_PORT })
+const httpLink = new HttpLink({ uri: 'https://hola-728z.onrender.com' })
 const wsLink = new GraphQLWsLink(createClient({
-  url: process.env.REACT_APP_WS_PORT,
+  url: 'wss://hola-728z.onrender.com/graphql',
   options: {
     reconnect: true
   }

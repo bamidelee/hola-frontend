@@ -4,14 +4,14 @@ import {useContext} from 'react'
 import defaultIcon from '../images/nopicpic.jpeg'
 
 
-function UserDisplay({user}){
+function UserDisplay({user, noLink}){
     const {style} = useContext(UserContext)
     const [mainStyle] = style
 
     return(
         <div>
            {user.slice().reverse().map((notification) => 
-             <Link to={`profile/${notification.username}`} style={mainStyle} className='notification' key={notification._id}>
+             <Link to={`profile/${notification.username}`} style={mainStyle} className='notification' key={notification._id} onClick={(e) => noLink && e.preventDefault()}>
                  <img src={notification.icon || defaultIcon} alt ={notification.username} className='icon'/>
                 <div>
                     <div className='userDetails'>

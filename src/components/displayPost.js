@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import {CREATE_POST, LIKE} from './quarries.js'
 import defaultIcon from '../images/nopicpic.jpeg'
 
-function DisplayPost ({postToShow, setId}){
+function DisplayPost ({postToShow, setId, noLink}){
     const {user, poster, postToReply, style} = useContext(UserContext)
     const [mainStyle] = style
     const [mainUser, setMainUser] = user
@@ -24,7 +24,7 @@ function DisplayPost ({postToShow, setId}){
 
     useEffect(()=> {
         if(likeData.data){
-            const dashPost = mainUser.dashPost.map((post) => {if(post.id === likeData.data.like.id){return{...likeData.data.like}}return post})
+            const dashPost = mainUser.dashPost.map((post) => {if(post._id === likeData.data.like._id){return{...likeData.data.like}}return post})
             setMainUser({...mainUser, dashPost: dashPost})
         }
     }, [likeData.data])
@@ -33,11 +33,11 @@ function DisplayPost ({postToShow, setId}){
         <div>
         {postToShow.slice().reverse().map((post) => 
         <div key={post._id} className='dashPost'>
-           <Link to = {`profile/${post.from.username}`} state= {{fromDashboard: true}}><img src={post.from.icon || defaultIcon} alt ={post.from.username} className='icon'/></Link>
+           <Link to = {`profile/${post.from.username}`} state= {{fromDashboard: true}} onClick= {(e) => noLink && e.preventDefault()}><img src={post.from.icon || defaultIcon} alt ={post.from.username} className='icon'/></Link>
             <div>
                 {post.commentTo && <div className='postUsername'> replied @{post.commentTo.from.username}</div>}
                 <div className='postHead'>
-                    <Link to={`profile/${post.from.username}`} className='nameLink' style={{...mainStyle}}><span className="postName" >{post.from.name}{post.from.verified && <span className="material-symbols-outlined verified">verified</span>}</span></Link>
+                    <Link to={`profile/${post.from.username}`} className='nameLink' style={{...mainStyle}}><span className="postName" onClick={(e) => noLink && e.preventDefault()} >{post.from.name}{post.from.verified && <span className="material-symbols-outlined verified">verified</span>}</span></Link>
                     <span className='postUsername'>@{post.from.username}</span>
                     <span className='postTime'>{formatDistanceToNowStrict(post.date)}</span>
                 </div>
@@ -64,7 +64,7 @@ function DisplayPost ({postToShow, setId}){
                            cycle
                         </span>
                         </button>
-                        <button className='like' onClick={({target}) => {like({variables:{id:post.id}});target.classList.toggle('liked') }}>
+                        <button className='like' onClick={({target}) => {like({variables:{id:post._id}});target.classList.toggle('liked') }}>
                         <div>
                             <span  className={post.likes.includes(mainUser.username)?'material-symbols-outlined liked': 'material-symbols-outlined'}>
                                 favorite

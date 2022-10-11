@@ -33,15 +33,15 @@ function CreatePost ({ placeholder, post, setShowPost, setPost}) {
         if(mediaType === 'image'){
         const formData = new FormData()
         formData.append('file', media)
-        formData.append('upload_preset', process.env.REACT_APP_UPLOAD_PRESET)
-         response = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`, formData)
+        formData.append('upload_preset', 'ij8swikr')
+         response = await axios.post(`https://api.cloudinary.com/v1_1/dmh70j1wn/image/upload`, formData)
         
         }
         if(mediaType === 'video'){
         const formData = new FormData()
         formData.append('file', media)
-        formData.append('upload_preset', process.env.REACT_APP_UPLOAD_PRESET)
-         response = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/video/upload`, formData)
+        formData.append('upload_preset', 'ij8swikr')
+         response = await axios.post(`https://api.cloudinary.com/v1_1/dmh70j1wn/video/upload`, formData)
         
         }
         setloading(false)

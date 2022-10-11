@@ -28,7 +28,7 @@ function DashPost () {
 
       useEffect(() =>{
         refetch()
-      })
+      }, [])
 
   
   if(!mainUser.dashPost){

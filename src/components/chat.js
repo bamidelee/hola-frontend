@@ -1,5 +1,5 @@
-import {TEXT} from './quarries'
-import {useMutation} from '@apollo/client'
+import {TEXT, USER_DETAILS} from './quarries'
+import {useMutation, useQuery, useApolloClient} from '@apollo/client'
 import {UserContext} from '../usercontext.js';
 import{ format,parseISO} from 'date-fns'
 import axios from 'axios'
@@ -11,9 +11,12 @@ function Chat ({receiver, setReceiver, buddy}) {
     const {user,  style, home} = useContext(UserContext)
     const [mainUser, setMainUser] = user
     const [mainStyle] = style
+    const client = useApolloClient()
     const [text, setText] = useState('')
     const [mediaType, setMediaType] = useState('')
     const [media, setMedia] = useState('')
+    const {error, data} = useQuery(USER_DETAILS, {variables:{username: mainUser.username}})
+    const [Messages, setMessages] = useState([])
     const [Text, result] = useMutation(TEXT, {
         onError: (error) => {
             console.log(error)
@@ -24,10 +27,30 @@ function Chat ({receiver, setReceiver, buddy}) {
     const chatDown = useRef()
     const textArea = useRef()
 
+    useEffect(() => {
+        if(data){
+            setMainUser(data.findUser)
+        }
+      
+    }, [data])
+
+    const refetch = async ()=>{
+        await client.refetchQueries({
+          include: [USER_DETAILS]
+        });
+      }
+
+      useEffect(() =>{
+        refetch()
+      }, [])
+    useEffect(()=> {
+        setMessages(mainUser.messages.filter((message) => message.sender.username === buddy.username || message.receiver.username === buddy.username))
+        console.log(Messages)
+    },[mainUser])
 
     const submit = async (e) => {
         e.preventDefault()
-        setMainUser({...mainUser, messages: [...mainUser.messages, { text, sender: mainUser, mediaType, date:  Date.now(), _id: new Date(), receiver: buddy, media:  mediaType? URL.createObjectURL(media): null}]})
+        setMessages(Messages.concat({ text, sender: mainUser, mediaType, date:  Date.now(), _id: new Date(), receiver: buddy, media:  mediaType? URL.createObjectURL(media): null}))
         console.log('oooooo')
         setText('')
         setMediaType('')
@@ -38,15 +61,15 @@ function Chat ({receiver, setReceiver, buddy}) {
         if(mediaType === 'image'){
         const formData = new FormData()
         formData.append('file', media)
-        formData.append('upload_preset', process.env.REACT_APP_UPLOAD_PRESET)
-         response = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`, formData)
+        formData.append('upload_preset', 'ij8swikr')
+         response = await axios.post(`https://api.cloudinary.com/v1_1/dmh70j1wn/image/upload`, formData)
         
         }
         if(mediaType === 'video'){
         const formData = new FormData()
         formData.append('file', media)
-        formData.append('upload_preset', process.env.REACT_APP_UPLOAD_PRESET)
-         response = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/video/upload`, formData)
+        formData.append('upload_preset', 'ij8swikr')
+         response = await axios.post(`https://api.cloudinary.com/v1_1/dmh70j1wn/video/upload`, formData)
         
         }
         console.log('aaaa')
@@ -91,8 +114,8 @@ function Chat ({receiver, setReceiver, buddy}) {
                     <div className='postUsername'>@{buddy.username}</div>
                 </div>
             </div>}
-            <div className='conversation' >
-                {mainUser.messages.map((message) => 
+            {<div className='conversation' >
+                {Messages.map((message) => 
                  <div  key={message._id}  className={message.sender.username === mainUser.username? 'to' : 'from'}>
                      <div className='chatText'>
                     {message.mediaType && <div>
@@ -105,7 +128,7 @@ function Chat ({receiver, setReceiver, buddy}) {
                     <div className='chatDate'>{format(message.date,'iii  p')}</div>
                  </div>)}
                  <div ref={chatDown}></div>
-            </div>
+            </div>}
           
             <form onSubmit={submit} style={mainStyle} id='talk'>
                 <input type='file' accept='video/*,image/*' id='gallery' onChange={({target}) => { if(target.files[0].type.includes('image')){

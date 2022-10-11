@@ -10,6 +10,7 @@ import UserDisplay from './userdisplay.js';
 import Chat from './chat.js';
 import {useParams} from 'react-router-dom'
 import defaultIcon from '../images/nopicpic.jpeg'
+import { parseJSON } from 'date-fns/esm';
 
 
 function Messages () {
@@ -49,14 +50,21 @@ function Messages () {
 
 
    useEffect(() => {
-    mainUser.messages.slice().forEach((message) => {
+       for( let i = 0; i < mainUser.messages.length; i++ ){
+            if(!contact.find((person) => person.username === mainUser.messages[i].sender.username)){
+                setContact([...contact, mainUser.messages[i].sender])
+              
+            }
+            if(!contact.find((person) => person.username === mainUser.messages[i].receiver.username)){
+                setContact(contact.concat(mainUser.messages[i].receiver))
+        
+            }
+          
+       }
 
-        if(message.sender.username !== mainUser.username && !contact.find((person) => person.username === message.sender.username)){setContact([...contact, message.sender])} 
-        else if(!contact.find((person) => person.username === message.receiver.username && message.receiver.username !== mainUser.username)){
-            setContact([...contact, message.receiver])
-        }})
+   }, [mainUser])
 
-   }, [mainUser.messages])
+  
 
    if(receiver){
     return(
@@ -76,7 +84,7 @@ function Messages () {
 
     return(
         <div>
-            {contact.slice().reverse().map((person) => 
+            {contact.map((person) => person.username !== mainUser.username && 
                 <div key={person._id} className='contactDetails' onClick={({target}) => {setReceiver(person._id); setBuddy(person)}}>
                      <img src={person.icon || defaultIcon} alt ={person.username} className='icon'/>
                         <div className='userDetails'>

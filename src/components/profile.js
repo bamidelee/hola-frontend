@@ -61,7 +61,7 @@ const refetch = async ()=>{
               <h2 className='profileName'>Profile</h2>
       </div>
       <div>
-          <UserDisplay user ={userFollowers}/>
+          <UserDisplay user ={userFollowers} noLink={true}/>
       </div>
   </div>
     )
@@ -78,8 +78,8 @@ const refetch = async ()=>{
                     <h2 className='profileName'>{USER.name}{USER.verified && <span className="material-symbols-outlined profileVerified">verified</span>}</h2>
             </div>    
               <div className="profileMain">
-                  <div className="profileBackImage">< img src = {  mainUser.backImage? mainUser.backImage : defaultBackImage } alt= 'wallpaper' className='profileWallpaper'/></div>
-                  <div className="profileIconContainer" style={mainStyle}><img src = {  mainUser.icon? mainUser.icon : defaultIcon } alt='profile' className='profileIcon'/></div>
+                  <div className="profileBackImage">< img src = {  USER.backImage? USER.backImage : defaultBackImage } alt= 'wallpaper' className='profileWallpaper'/></div>
+                  <div className="profileIconContainer" style={mainStyle}><img src = {  USER.icon? USER.icon : defaultIcon } alt='profile' className='profileIcon'/></div>
                   
                  { mainUser.username !== USER.username &&  <Link to={`messages/${USER.username}`} style={mainStyle} className='profileMessage'>
                       {USER.username &&  <span className="material-symbols-outlined">

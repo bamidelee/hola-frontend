@@ -50,18 +50,18 @@ function Profile ({style, setFilter}) {
         if(image){
             const formData = new FormData()
         formData.append('file', image)
-        formData.append('upload_preset', process.env.REACT_APP_UPLOAD_PRESET)
+        formData.append('upload_preset', 'ij8swikr')
         setLoading(true)
-         response = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`, formData)
+         response = await axios.post(`https://api.cloudinary.com/v1_1/dmh70j1wn/image/upload`, formData)
             setLoading(false)
         }
         
         if(backImage){
             const formData2 = new FormData()
             formData2.append('file', backImage)
-            formData2.append('upload_preset', process.env.REACT_APP_UPLOAD_PRESET) 
+            formData2.append('upload_preset', 'ij8swikr') 
             setLoading(true)
-            response2 = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`, formData2)
+            response2 = await axios.post(`https://api.cloudinary.com/v1_1/dmh70j1wn/image/upload`, formData2)
             setLoading(false)
         }
       
